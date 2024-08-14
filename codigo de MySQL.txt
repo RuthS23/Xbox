@@ -1,0 +1,180 @@
+Enter password: ********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2
+Server version: 5.7.15-log MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE IF NOT EXISTS control_xbox_db;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> USE control_xbox_db;
+Database changed
+mysql> CREATE TABLE controles (
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+    ->     nombre VARCHAR(255) NOT NULL,
+    ->     precio DECIMAL(10, 2) NOT NULL
+    -> );
+Query OK, 0 rows affected (0.28 sec)
+
+mysql> INSERT INTO controles (nombre, precio) VALUES
+    -> ('Control inalámbrico Xbox: blanco robot', 2029.00),
+    -> ('Control inalámbrico Xbox Elite Series 2: básico (blanco)', 999.00),
+    -> ('Control inalámbrico Xbox: Edición especial Nocturnal Vapor', 1099.00),
+    -> ('Control inalámbrico Xbox: Edición especial camuflaje ártico', 899.00),
+    -> ('Control inalámbrico Xbox: Edición especial Dream Vapor', 1079.00),
+    -> ('Control inalámbrico Xbox: Edición especial Sombra dorada', 1999.00),
+    -> ('Control inalámbrico Xbox: Edición especial Stormcloud Vapor', 1409.00),
+    -> ('Control inalámbrico Xbox - Lunar Shift Special Edition', 4798.00),
+    -> ('Control inalámbrico Xbox: Edición limitada Starfield', 1209.00),
+    -> ('Control inalámbrico Xbox: Edición especial Sunkissed Vibes OPI', 999.00),
+    -> ('Control inalámbrico Xbox: Edición especial Stellar Shift', 1090.00),
+    -> ('Control inalámbrico Xbox: Edición especial camuflaje mineral', 4570.00),
+    -> ('Control inalámbrico Xbox + cable USB-C', 1090.00),
+    -> ('Control inalámbrico Xbox + Adaptador inalámbrico para Windows 10', 2000.00),
+    -> ('Control inalámbrico Xbox: Edición especial Remix', 1800.00),
+    -> ('Control inalámbrico Xbox: Edición especial camuflaje ataque de día', 3589.00),
+    -> ('Control Inalámbrico Xbox - Shock Blue', 1199.00),
+    -> ('Control Inalámbrico Xbox- Pulse Red - Standard Edition', 2467.00),
+    -> ('CONTROL DE XBOX 360 - C3PO', 2499.00),
+    -> ('DUALSHOCK 3 - GOD OF WAR ASCENSION', 999.00),
+    -> ('CONTROL DE XBOX 360 DE CALL OF DUTY MODERN WARFARE 3', 1299.00);
+Query OK, 21 rows affected (0.08 sec)
+Records: 21  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM controles;
++----+-----------------------------------------------------------------------+---------+
+| id | nombre                                                                | precio  |
++----+-----------------------------------------------------------------------+---------+
+|  1 | Control inalámbrico Xbox: blanco robot                                | 2029.00 |
+|  2 | Control inalámbrico Xbox Elite Series 2: básico (blanco)              |  999.00 |
+|  3 | Control inalámbrico Xbox: Edición especial Nocturnal Vapor            | 1099.00 |
+|  4 | Control inalámbrico Xbox: Edición especial camuflaje ártico           |  899.00 |
+|  5 | Control inalámbrico Xbox: Edición especial Dream Vapor                | 1079.00 |
+|  6 | Control inalámbrico Xbox: Edición especial Sombra dorada              | 1999.00 |
+|  7 | Control inalámbrico Xbox: Edición especial Stormcloud Vapor           | 1409.00 |
+|  8 | Control inalámbrico Xbox - Lunar Shift Special Edition                | 4798.00 |
+|  9 | Control inalámbrico Xbox: Edición limitada Starfield                  | 1209.00 |
+| 10 | Control inalámbrico Xbox: Edición especial Sunkissed Vibes OPI        |  999.00 |
+| 11 | Control inalámbrico Xbox: Edición especial Stellar Shift              | 1090.00 |
+| 12 | Control inalámbrico Xbox: Edición especial camuflaje mineral          | 4570.00 |
+| 13 | Control inalámbrico Xbox + cable USB-C                                | 1090.00 |
+| 14 | Control inalámbrico Xbox + Adaptador inalámbrico para Windows 10      | 2000.00 |
+| 15 | Control inalámbrico Xbox: Edición especial Remix                      | 1800.00 |
+| 16 | Control inalámbrico Xbox: Edición especial camuflaje ataque de día    | 3589.00 |
+| 17 | Control Inalámbrico Xbox - Shock Blue                                 | 1199.00 |
+| 18 | Control Inalámbrico Xbox- Pulse Red - Standard Edition                | 2467.00 |
+| 19 | CONTROL DE XBOX 360 - C3PO                                            | 2499.00 |
+| 20 | DUALSHOCK 3 - GOD OF WAR ASCENSION                                    |  999.00 |
+| 21 | CONTROL DE XBOX 360 DE CALL OF DUTY MODERN WARFARE 3                  | 1299.00 |
++----+-----------------------------------------------------------------------+---------+
+21 rows in set (0.00 sec)
+
+mysql> CREATE DATABASE xbox_db;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> USE xbox_db;
+Database changed
+mysql> CREATE TABLE xbox_consoles (    id INT AUTO_INCREMENT PRIMARY KEY,    nombre VARCHAR(50) NOT NULL,    generacion VARCHAR(50) NOT NULL,    año_lanzamiento YEAR NOT NULL,    precio DECIMAL(10, 2) NOT NULL);
+Query OK, 0 rows affected (0.23 sec)
+
+mysql> INSERT INTO xbox_consoles (nombre, generacion, año_lanzamiento, precio) VALUES('Xbox Series S', 'Cuarta generación: Xbox Series X y Series S (2020 - actualidad)', 2020, 7999.00),('Xbox', 'Primera generación de Xbox (2001 - 2009)', 2001, 2629.42),('Xbox 360', 'Segunda generación: Xbox 360 (2005 - 2016)', 2005, 2300.62),('Xbox 360 S Slim', 'Segunda generación: Xbox 360 (2005 - 2016)', 2010, 2027.73),('Xbox 360 E', 'Segunda generación: Xbox 360 (2005 - 2016)', 2013, 2345.67),('Xbox One', 'Tercera generación: Xbox One (2013 - 2020)', 2013, 3456.87),('Xbox One S', 'Tercera generación: Xbox One (2013 - 2020)', 2016, 3226.98),('Xbox One X', 'Tercera generación: Xbox One (2013 - 2020)', 2017, 2546.89),('Xbox Series X', 'Cuarta generación: Xbox Series X y Series S (2020 - actualidad)', 2020, 11084.00);
+Query OK, 9 rows affected, 2 warnings (0.03 sec)
+Records: 9  Duplicates: 0  Warnings: 2
+
+mysql> SELECT * FROM xbox_consoles;
++----+-----------------+-----------------------------------------------------+------------------+----------+
+| id | nombre          | generacion                                          | año_lanzamiento  | precio   |
++----+-----------------+-----------------------------------------------------+------------------+----------+
+|  1 | Xbox Series S   | Cuarta generación: Xbox Series X y Series S (2020   |             2020 |  7999.00 |
+|  2 | Xbox            | Primera generación de Xbox (2001 - 2009)            |             2001 |  2629.42 |
+|  3 | Xbox 360        | Segunda generación: Xbox 360 (2005 - 2016)          |             2005 |  2300.62 |
+|  4 | Xbox 360 S Slim | Segunda generación: Xbox 360 (2005 - 2016)          |             2010 |  2027.73 |
+|  5 | Xbox 360 E      | Segunda generación: Xbox 360 (2005 - 2016)          |             2013 |  2345.67 |
+|  6 | Xbox One        | Tercera generación: Xbox One (2013 - 2020)          |             2013 |  3456.87 |
+|  7 | Xbox One S      | Tercera generación: Xbox One (2013 - 2020)          |             2016 |  3226.98 |
+|  8 | Xbox One X      | Tercera generación: Xbox One (2013 - 2020)          |             2017 |  2546.89 |
+|  9 | Xbox Series X   | Cuarta generación: Xbox Series X y Series S (2020   |             2020 | 11084.00 |
++----+-----------------+-----------------------------------------------------+------------------+----------+
+9 rows in set (0.00 sec)
+
+mysql> CREATE TABLE videojuegos (
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+    ->     nombre VARCHAR(100) NOT NULL,
+    ->     precio DECIMAL(10, 2) NOT NULL
+    -> );
+Query OK, 0 rows affected (0.22 sec)
+
+mysql> INSERT INTO videojuegos (nombre, precio) VALUES
+    -> ('THE BEGGAR', 550.90),
+    -> ('CYNTHIA', 489.97),
+    -> ('ESCAPE ROOM', 620.52),
+    -> ('OUTBREAK', 322.00),
+    -> ('MAGIONL DROP', 236.24),
+    -> ('ASTRUNE ACADEMY', 542.36),
+    -> ('FREGCY', 350.85),
+    -> ('MARIO BROS', 750.25),
+    -> ('FIGHT', 320.56),
+    -> ('GRAND THEFT AUTO 2', 690.68),
+    -> ('UFC', 547.10),
+    -> ('FORZA 7', 495.66),
+    -> ('FORZA 3', 456.36),
+    -> ('CARS', 305.65),
+    -> ('ULTIMATE EDITION', 450.36),
+    -> ('FIFA 19', 299.00),
+    -> ('FIFA 13', 459.99),
+    -> ('FIFA 22', 245.20),
+    -> ('ZOMBIE ARMY 4', 260.45),
+    -> ('Plantas vs Zombies', 550.45);
+Query OK, 20 rows affected (0.03 sec)
+Records: 20  Duplicates: 0  Warnings: 0
+
+mysql> SELECT *
+    -> FROM videojuegos;
++----+--------------------+--------+
+| id | nombre             | precio |
++----+--------------------+--------+
+|  1 | THE BEGGAR         | 550.90 |
+|  2 | CYNTHIA            | 489.97 |
+|  3 | ESCAPE ROOM        | 620.52 |
+|  4 | OUTBREAK           | 322.00 |
+|  5 | MAGIONL DROP       | 236.24 |
+|  6 | ASTRUNE ACADEMY    | 542.36 |
+|  7 | FREGCY             | 350.85 |
+|  8 | MARIO BROS         | 750.25 |
+|  9 | FIGHT              | 320.56 |
+| 10 | GRAND THEFT AUTO 2 | 690.68 |
+| 11 | UFC                | 547.10 |
+| 12 | FORZA 7            | 495.66 |
+| 13 | FORZA 3            | 456.36 |
+| 14 | CARS               | 305.65 |
+| 15 | ULTIMATE EDITION   | 450.36 |
+| 16 | FIFA 19            | 299.00 |
+| 17 | FIFA 13            | 459.99 |
+| 18 | FIFA 22            | 245.20 |
+| 19 | ZOMBIE ARMY 4      | 260.45 |
+| 20 | Plantas vs Zombies | 550.45 |
++----+--------------------+--------+
+20 rows in set (0.00 sec)
+
+mysql> CREATE TABLE Usuarios (    id_usuario INT AUTO_INCREMENT PRIMARY KEY,    nombre VARCHAR(255) NOT NULL,    correo_electronico VARCHAR(255) NOT NULL);
+Query OK, 0 rows affected (0.22 sec)
+
+mysql> CREATE TABLE Consultas (    id_consulta INT AUTO_INCREMENT PRIMARY KEY,    id_usuario INT,    tipo_consulta ENUM('Problema técnico', 'Suscripción', 'Registro de producto', 'Otro') NOT NULL,    mensaje TEXT NOT NULL,    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario));
+Query OK, 0 rows affected (0.38 sec)
+
+mysql> SELECT *
+    -> FROM Usuarios;
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM Consultas;
+Empty set (0.00 sec)
+
+mysql>
+
